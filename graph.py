@@ -10,12 +10,26 @@ class Graph:
 
     def __init__(self):
         self.data = {}
+        self.numVerticies = 0
 
     def adjacent(self, Vertex1, Vertex2):
         if self.data == {}:
           return False
     def neighbors(self, Vertex1):
-      return []
+        if self.adjacent:
+            return []
+        else:
+            return Vertex1
+
+    def add_vertex(self, newVert):
+        if self.data.__contains__(newVert):
+            pass
+        else: 
+            self.data[newVert] == []
+        # self.numVerticies = self.numVerticies + 1
+        # newVertex = self.numVerticies
+        # return newVertex
+
 
     
 
