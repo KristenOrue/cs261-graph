@@ -8,9 +8,9 @@ import functools
 
 class Graph:
 
-    def __init__(self):
+    def __init__(self, neighbor = []):
         self.data = {}
-        self.numVerticies = 0
+        self.neighbor = neighbor
 
     def adjacent(self, Vertex1, Vertex2):
         if self.data == {}:
@@ -25,7 +25,7 @@ class Graph:
         if self.data.__contains__(newVert):
             pass
         else: 
-            self.data[newVert] == []
+            self.data[newVert] = self.neighbor
         # self.numVerticies = self.numVerticies + 1
         # newVertex = self.numVerticies
         # return newVertex
