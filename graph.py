@@ -35,9 +35,18 @@ class Graph:
         # self.numVerticies = self.numVerticies + 1
         # newVertex = self.numVerticies
         # return newVertex
-    def remove_vertex(self, vertice):
-        if self.data.__contains__(vertice):
+    def remove_vertex(self, vertice): 
+        if vertice in self.data:
+            for vertex in self.data[vertice]:
+                self.data[vertex].remove(vertice)
             del self.data[vertice]
+        else:
+            pass
+ 
+        # if vertice in self.data[vertice]:
+        #     del vertice
+        # if self.data.__contains__(vertice):
+        #     del self.data[vertice]
 
     def add_edge(self, vertex1, vertex2):
         if self.data.__contains__(vertex1):
