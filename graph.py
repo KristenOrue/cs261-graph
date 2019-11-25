@@ -60,8 +60,9 @@ class Graph:
         else: 
             pass
 
-    def remove_edge(self, edge1, edge2):
-        pass
+    def remove_edge(self, vertex1, vertex2):
+         pass
+ 
 
 
 
