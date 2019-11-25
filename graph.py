@@ -69,6 +69,15 @@ class Graph:
             pass
     def v(self):
         return len(self.data)
+
+    def e(self):
+        n=0
+        for vertex in self.data.keys():
+            n += len(self.data[vertex])
+        return n/2
+
+        # for vertice in self.data:
+        #  return len(self.data[vertice])
  
 
 
