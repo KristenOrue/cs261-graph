@@ -15,6 +15,12 @@ class Graph:
     def adjacent(self, Vertex1, Vertex2):
         if self.data == {}:
           return False
+
+        elif Vertex2 in self.data[Vertex1]:
+            return True 
+        else:
+            return False
+
     def neighbors(self, Vertex1):
         if self.adjacent:
             return []
@@ -33,8 +39,12 @@ class Graph:
         if self.data.__contains__(vertice):
             del self.data[vertice]
 
-    def add_edge(self, edge1, edge2):
-        pass
+    def add_edge(self, vertex1, vertex2):
+        if self.data.__contains__(vertex1):
+            self.data[vertex1].append(vertex2)
+            # self.data[vertex2].append[vertex1]    
+        else: 
+            pass
 
     def remove_edge(self, edge1, edge2):
         pass
