@@ -61,7 +61,12 @@ class Graph:
             pass
 
     def remove_edge(self, vertex1, vertex2):
-         pass
+        if self.data.__contains__(vertex1) and self.data.__contains__(vertex2):
+            if vertex2 in self.data[vertex1]:
+                self.data[vertex1].remove(vertex2)
+                self.data[vertex2].remove(vertex1)
+        else:
+            pass
  
 
 
