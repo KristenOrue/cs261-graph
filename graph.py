@@ -67,6 +67,8 @@ class Graph:
                 self.data[vertex2].remove(vertex1)
         else:
             pass
+    def v(self):
+        return len(self.data)
  
 
 

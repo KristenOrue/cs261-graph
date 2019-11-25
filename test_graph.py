@@ -234,22 +234,22 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(['B'], g.data['A'])
         self.assertEqual(['A'], g.data['B'])
 
-    # def test_remove_edge_two(self):
-    #     """
-    #     Removing an edge between two vertices removes each vertex from both
-    #     neighbors lists.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = ['A']
-    #     g.remove_edge('A', 'B')
-    #     self.assertEqual([], g.data['A'])
-    #     self.assertEqual([], g.data['B'])
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = ['A']
-    #     g.remove_edge('B', 'A')
-    #     self.assertEqual([], g.data['A'])
-    #     self.assertEqual([], g.data['B'])
+    def test_remove_edge_two(self):
+        """
+        Removing an edge between two vertices removes each vertex from both
+        neighbors lists.
+        """
+        g = Graph()
+        g.data['A'] = ['B']
+        g.data['B'] = ['A']
+        g.remove_edge('A', 'B')
+        self.assertEqual([], g.data['A'])
+        self.assertEqual([], g.data['B'])
+        g.data['A'] = ['B']
+        g.data['B'] = ['A']
+        g.remove_edge('B', 'A')
+        self.assertEqual([], g.data['A'])
+        self.assertEqual([], g.data['B'])
 
     def test_remove_edge_nonexisting_two(self):
         """
@@ -344,31 +344,31 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(['A', 'B'], g.data['C'])
         self.assertEqual(['A'], g.data['D'])
 
-    # """
-    # Properties
-    # """
+    """
+    Properties
+    """
 
-    # def test_v(self):
-    #     """
-    #     |V| is the number of vertices in a graph.
-    #     """
-    #     g = Graph()
-    #     g.add_vertex('A')
-    #     self.assertEqual(1, g.v())
-    #     g.add_vertex('B')
-    #     g.add_vertex('C')
-    #     self.assertEqual(3, g.v())
+    def test_v(self):
+        """
+        |V| is the number of vertices in a graph.
+        """
+        g = Graph()
+        g.add_vertex('A')
+        self.assertEqual(1, g.v())
+        g.add_vertex('B')
+        g.add_vertex('C')
+        self.assertEqual(3, g.v())
 
-    # def test_e(self):
-    #     """
-    #     |E| is the number of edges in a graph.
-    #     Hint: There's an easy way - read or look it up?
-    #     Bonus: Try reduce.
-    #     """
-    #     g = larger_graph()
-    #     self.assertEqual(4, g.e())
-    #     g.add_edge('D', 'B')
-    #     self.assertEqual(5, g.e())
+    def test_e(self):
+        """
+        |E| is the number of edges in a graph.
+        Hint: There's an easy way - read or look it up?
+        Bonus: Try reduce.
+        """
+        g = larger_graph()
+        self.assertEqual(4, g.e())
+        g.add_edge('D', 'B')
+        self.assertEqual(5, g.e())
 
 
 def larger_graph():
