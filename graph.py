@@ -8,9 +8,8 @@ import functools
 
 class Graph:
 
-    def __init__(self, neighbor = []):
+    def __init__(self):
         self.data = {}
-        self.neighbor = neighbor
 
     def adjacent(self, Vertex1, Vertex2):
         if self.data == {}:
@@ -21,17 +20,18 @@ class Graph:
         else:
             return False
 
-    def neighbors(self, Vertex1):
-        if self.adjacent:
+    def neighbors(self, vertex1):
+        if vertex1 not in self.data:
             return []
         else:
-            return Vertex1
+            return self.data[vertex1]
+
 
     def add_vertex(self, newVert):
         if self.data.__contains__(newVert):
             pass
         else: 
-            self.data[newVert] = self.neighbor
+            self.data[newVert] = []
         # self.numVerticies = self.numVerticies + 1
         # newVertex = self.numVerticies
         # return newVertex
