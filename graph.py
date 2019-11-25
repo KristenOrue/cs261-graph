@@ -52,8 +52,11 @@ class Graph:
         # if self.data.__contains__(vertex1):
         #     self.data[vertex1].append(vertex2)
         if self.data.__contains__(vertex1) and self.data.__contains__(vertex2):
-            self.data[vertex1].append(vertex2)   
-            self.data[vertex2].append(vertex1) 
+            if self.data[vertex1].__contains__(vertex2) and self.data[vertex2].__contains__(vertex1):
+                pass
+            else:
+                self.data[vertex1].append(vertex2)   
+                self.data[vertex2].append(vertex1) 
         else: 
             pass
 
