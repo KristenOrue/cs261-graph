@@ -49,9 +49,11 @@ class Graph:
         #     del self.data[vertice]
 
     def add_edge(self, vertex1, vertex2):
-        if self.data.__contains__(vertex1):
-            self.data[vertex1].append(vertex2)
-            # self.data[vertex2].append[vertex1]    
+        # if self.data.__contains__(vertex1):
+        #     self.data[vertex1].append(vertex2)
+        if self.data.__contains__(vertex1) and self.data.__contains__(vertex2):
+            self.data[vertex1].append(vertex2)   
+            self.data[vertex2].append(vertex1) 
         else: 
             pass
 
